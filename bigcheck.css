@@ -1,24 +1,22 @@
-/* Base for label styling */
-.bigcheck:not(:checked),
-.bigcheck:checked {
+/* native checkbox */
+.bigcheck {
 	position: absolute;
 	left: -9999px;
 }
 
-.bigcheck:not(:checked) + label,
-.bigcheck:checked + label {
+/* label */
+.bigcheck + * {
 	position: relative;
 	padding-left: 25px;
 	cursor: pointer;
 }
 
 
-/* checkbox aspect */
-.bigcheck:not(:checked) + label:before,
-.bigcheck:checked + label:before {
+/* box */
+.bigcheck + :before {
 	content: '';
 	position: absolute;
-	left:0; top: 2px;
+	left: 0; top: 2px;
 	width: 17px; height: 17px;
 	border: 1px solid #aaa;
 	background: #f8f8f8;
@@ -27,54 +25,51 @@
 }
 
 
-/* checked mark aspect */
-.bigcheck:not(:checked) + label:after,
-.bigcheck:checked + label:after {
+/* check */
+.bigcheck + :after {
 	content: '✔';
 	position: absolute;
 	top: 0; left: 4px;
 	font-size: 14px;
+	line-height: 22px;
 	color: #09ad7e;
 	transition: all .2s;
 }
 
 
-/* checked mark aspect changes */
-.bigcheck:not(:checked) + label:after {
+/* check state changes */
+.bigcheck:not(:checked) + :after {
 	opacity: 0;
 	transform: scale(0);
 }
 
-.bigcheck:checked + label:after {
+.bigcheck:checked + :after {
 	opacity: 1;
 	transform: scale(1);
 }
 
 
 /* disabled */
-.bigcheck:disabled:not(:checked) + label:before,
-.bigcheck:disabled:checked + label:before {
+.bigcheck:disabled + :before {
 	box-shadow: none;
 	border-color: #bbb;
 	background-color: #ddd;
 }
 
-.bigcheck:disabled:checked + label:after {
+.bigcheck:disabled:checked + :after {
 	color: #999;
 }
 
-.bigcheck:disabled + label {
+.bigcheck:disabled + * {
 	color: #aaa;
 }
 
 
-/* accessibility */
-.bigcheck:checked:focus + label:before,
-.bigcheck:not(:checked):focus + label:before {
+/* hover & focus states */
+.bigcheck:focus + :before {
 	border: 1px dotted blue;
 }
 
-/* hover style just for information */
-.bigcheck + label:hover:before {
-	border: 1px solid #4778d9!important;
+.bigcheck + :hover:before {
+	border: 1px solid #4778d9;
 }
