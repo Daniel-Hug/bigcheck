@@ -4,6 +4,7 @@
 	left: -9999px;
 }
 
+
 /* label */
 .bigcheck + label {
 	position: relative;
@@ -20,7 +21,7 @@
 }
 
 
-/* box */
+/* custom checkbox */
 .bigcheck + label:before {
 	content: '';
 	position: absolute;
@@ -36,7 +37,7 @@
 }
 
 
-/* check */
+/* custom checkmark */
 .bigcheck + label:after {
 	content: '✔';
 	position: absolute;
@@ -60,20 +61,18 @@
 	background-color: #ddd;
 }
 
-.bigcheck:disabled:checked + label:after {
-	color: #999;
-}
 
-
-/* hover & focus states */
+/* hover state */
 .bigcheck + label:hover:after {
 	color: #d0d0d0;
 }
 
 .bigcheck:disabled + label:hover:after {
-	color: #ccc;
+	color: #c0c0c0;
 }
 
+
+/* focus state */
 .bigcheck:focus + label:before {
 	border: 1px solid #4778d9;
 }
@@ -82,4 +81,8 @@
 /* checked state */
 .bigcheck:checked + label:after {
 	color: #09ad7e;
+}
+
+.bigcheck:disabled:checked + label:after {
+	color: #999;
 }
