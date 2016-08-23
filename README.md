@@ -3,10 +3,12 @@
 Big custom-styled intuitive checkboxes with pure CSS
 
 ## Use
-Add a class of `bigcheck` to your checkbox and make sure it has a `<label>` after it that's linked with to it with a `for` attribute:
+Nest a checkbox, then a `<span>` (containing the label text) in a `<label>` with a class of `bigcheck`:
 ```html
-<input type="checkbox" class="bigcheck" id="agree">
-<label for="agree">I agree.</label>
+<label class="bigcheck">
+  <input type="checkbox">
+  <span>I agree.</span>
+</label>
 ```
 
 Check out [the demo](http://daniel-hug.github.io/bigcheck/).
