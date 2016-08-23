@@ -1,12 +1,12 @@
 /* native checkbox */
-.bigcheck {
+.bigcheck input[type=checkbox] {
 	position: absolute;
 	left: -9999px;
 }
 
 
 /* label */
-.bigcheck + label {
+.bigcheck span {
 	position: relative;
 	padding-left: 27px;
 	cursor: pointer;
@@ -17,7 +17,7 @@
 	    -ms-user-select: none; /* IE10+ */
 }
 
-.bigcheck.hide-label + label {
+.bigcheck.hide-label span {
 	padding-left: 21px;
 	width: 0;
 	overflow: hidden;
@@ -27,7 +27,7 @@
 
 
 /* custom checkbox */
-.bigcheck + label:before {
+.bigcheck span:before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -42,7 +42,7 @@
 
 
 /* custom checkmark */
-.bigcheck + label:after {
+.bigcheck span:after {
 	content: '✔';
 	position: absolute;
 	top: 0;
@@ -54,12 +54,12 @@
 
 
 /* disabled state */
-.bigcheck:disabled + label {
+.bigcheck input[type=checkbox]:disabled + span {
 	color: #aaa;
 	cursor: default;
 }
 
-.bigcheck:disabled + label:before {
+.bigcheck input[type=checkbox]:disabled + span:before {
 	box-shadow: none;
 	border-color: #bbb;
 	background-color: #ddd;
@@ -67,26 +67,26 @@
 
 
 /* hover state */
-.bigcheck + label:hover:after {
+.bigcheck span:hover:after {
 	color: #d0d0d0;
 }
 
-.bigcheck:disabled + label:hover:after {
+.bigcheck input[type=checkbox]:disabled + span:hover:after {
 	color: #c0c0c0;
 }
 
 
 /* focus state */
-.bigcheck:focus + label:before {
+.bigcheck input[type=checkbox]:focus + span:before {
 	border: 1px solid #4778d9;
 }
 
 
 /* checked state */
-.bigcheck:checked + label:after {
+.bigcheck input[type=checkbox]:checked + span:after {
 	color: #09ad7e;
 }
 
-.bigcheck:disabled:checked + label:after {
+.bigcheck input[type=checkbox]:disabled:checked + span:after {
 	color: #999;
 }
